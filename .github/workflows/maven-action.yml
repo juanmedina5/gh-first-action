@@ -13,10 +13,13 @@ jobs:
         java-version: '21'
     - name: Set up Maven
       run: |
-        java -version
-        sudo apt-get update
-        sudo apt install maven -y
-        sudo mvn -v
+        MAVEN_VERSION=3.9.6
+        wget https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz
+        tar -xzf apache-maven-${MAVEN_VERSION}-bin.tar.gz
+        sudo mv apache-maven-${MAVEN_VERSION} /opt/maven
+        echo "MAVEN_HOME=/opt/maven" >> $GITHUB_ENV
+        echo "/opt/maven/bin" >> $GITHUB_PATH
+        maven -version
     - name: compile
       run: maven compile
     
