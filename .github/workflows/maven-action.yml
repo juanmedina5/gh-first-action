@@ -1,0 +1,23 @@
+name: manven workflow
+on: [push]
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4
+    - name: install jdk
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+    - name: Set up Maven
+      uses: hb0730/maven-action@latest
+      with:
+        maven-version: 3.8.2
+        maven-file: ${{ runner.temp }}/apache-maven-3.8.2-bin.tar.gz
+        url: https://downloads.apache.org/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin.tar.gz
+    - name: compile
+      run: maven compile
+    
+  
