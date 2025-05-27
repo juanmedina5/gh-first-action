@@ -8,3 +8,7 @@ jobs:
         run: echo "CABJ"
       - name: create dir
         run: mkdir cabj
+      - name: multi line step # Asi se ejecutan scripts multi linea
+        run: |
+          echo "line 1"
+          echo "line 2"
