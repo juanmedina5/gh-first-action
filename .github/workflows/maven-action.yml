@@ -14,9 +14,9 @@ jobs:
     - name: Set up Maven
       run: |
         java -version
-        apt-get update
-        apt install maven -y
-        mvn -v
+        sudo apt-get update
+        sudo apt install maven -y
+        sudo mvn -v
     - name: compile
       run: maven compile
     
