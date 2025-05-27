@@ -1,0 +1,10 @@
+name: workflow-jm
+on: [workflow_dispatch] # Garantiza que se pueda correr manualmente el WF
+jobs:
+  first-job: 
+    runs-on: ubuntu-latest # Runner
+    steps:
+      - name: print text
+        run: echo "CABJ"
+      - name: create dir
+        run: mkdir cabj
