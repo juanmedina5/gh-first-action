@@ -16,7 +16,7 @@ jobs:
         java -version
         sudo apt-get update
         sudo apt install maven -y
-        maven -v
+        mvn -v
     - name: compile
       run: mvn compile
     
