@@ -1,4 +1,4 @@
-name: manven workflow
+name: maven workflow
 on: [push]
 jobs:
   compile:
