@@ -19,5 +19,22 @@ jobs:
         mvn -v
     - name: compile
       run: mvn compile
-    
+  install:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4
+    - name: install jdk
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+    - name: Set up Maven
+      run: |
+        java -version
+        sudo apt-get update
+        sudo apt install maven -y
+        mvn -v
+    - name: install
+      run: mvn install
   
