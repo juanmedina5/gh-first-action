@@ -1,0 +1,11 @@
+name: Events WF Demo
+on:
+  pull_request: # Event
+    types: [opened, edited] # Activity types
+  workflow_dispatch: # Event
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "saludo"
+        run: echo "CABJ"
