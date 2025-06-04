@@ -18,8 +18,8 @@ jobs:
       - name: Get Artifact
         uses: actions/download-artifact@v4
         with:
-          name: artifact-jm
-          path: file.txt
+          name: artifact-jm  # Debe ser igual al artefacto original
+        #   path: file.txt
       - name: Show Artifact
         run: |
           ls
