@@ -1,0 +1,21 @@
+name: Artifacts WF
+on: [push]
+jobs:
+  Generate-Artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Generate Artifact"
+        run: echo "Sample Artifact!! Bon Jovi 4 Ever" > file.txt
+      - name: "Upload Artifact"
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifact-jm # Por defecto es artifact
+          path: file.txt
+
+  Get-Artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Artifact
+        run: cat file.txt
+    needs: Generate-Artifact
+          

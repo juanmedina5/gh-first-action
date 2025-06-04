@@ -3,6 +3,14 @@ on:
   pull_request: # Event
     types: [opened, edited] # Activity types
   workflow_dispatch: # Event
+  push: # Event
+    branches: # Filter
+      - main
+      - develop
+      - "dev-*"
+      - feat/**
+    paths-ignore: # con ignore, se ejecutará en todos los escenarios excepto si se cambia un archivo en el path especifico 
+      - .github/workflows/*
 jobs:
   test-job:
     runs-on: ubuntu-latest
