@@ -18,7 +18,7 @@ jobs:
       - name: Get Artifact
         uses: actions/download-artifact@v4
         with:
-          name: my text file
+          name: artifact-jm
           path: file.txt
       - name: Show Artifact
         run: |
