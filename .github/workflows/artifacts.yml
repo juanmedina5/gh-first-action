@@ -33,7 +33,6 @@ jobs:
         env:
           OUTPUT1: ${{needs.Generate-Artifact.outputs.test-output}}
         run: |
-          #   variable=${{needs.Generate-Artifact.outputs.test-output}}
           echo $OUTPUT1
     needs: Generate-Artifact
           
