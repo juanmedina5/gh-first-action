@@ -4,16 +4,21 @@ on:
   - workflow_dispatch 
 
 env:
-  GLOBAL_VAR: "Bon Jovi"
+  GLOBAL_VAR: "Global var"
 
 jobs:
   test-job:
     runs-on: ubuntu-latest
     env:
-      JOB_VAR: "CABJ"
+      JOB_VAR: "Job var"
     steps:
       - name: Print Global var
         run: echo ${{env.GLOBAL_VAR}}
       - name: Print Job var
         run: echo ${{env.JOB_VAR}}
+      - name: Print Step var
+        env:
+          STEP_VAR: "This is a step var"
+        run: echo ${{env.STEP_VAR}}
+
     
