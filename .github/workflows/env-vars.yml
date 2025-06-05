@@ -20,5 +20,11 @@ jobs:
         env:
           STEP_VAR: "This is a step var"
         run: echo ${{env.STEP_VAR}}
+    
+  print-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print secret
+        run: echo ${{secrets.SECRET_VAR}}
 
     
