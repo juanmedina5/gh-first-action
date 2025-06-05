@@ -30,6 +30,8 @@ jobs:
           ls
           cat file.txt
       - name: Print output
-        run: echo ${{needs.Generate-Artifact.outputs.test-output}}
+        run: |
+          variable=${{needs.Generate-Artifact.outputs.test-output}}
+          echo $variable
     needs: Generate-Artifact
           
