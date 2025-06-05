@@ -34,6 +34,7 @@ jobs:
           OUTPUT1: ${{needs.Generate-Artifact.outputs.test-output}}
         run: |
           echo ${{needs.Generate-Artifact.outputs.test-output}}
+          echo "print var - $OUTPUT1"
     needs: Generate-Artifact
   
   job1:
