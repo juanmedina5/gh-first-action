@@ -10,7 +10,7 @@ jobs:
         run: echo "Sample Artifact!! Bon Jovi 4 Ever" > file.txt
       - name: "Generate Output"
         id: gen-output  
-        run: echo "var=Bon Jovi" >> "$GITHUB_OUTPUT" 
+        run: var="Bon Jovi" >> "$GITHUB_OUTPUT" 
       - name: "Upload Artifact"
         uses: actions/upload-artifact@v4
         with:
@@ -33,7 +33,7 @@ jobs:
         env:
           OUTPUT1: ${{needs.Generate-Artifact.outputs.test-output}}
         run: |
-          echo $OUTPUT1
+          echo ${{needs.Generate-Artifact.outputs.test-output}}
     needs: Generate-Artifact
   
   job1:
