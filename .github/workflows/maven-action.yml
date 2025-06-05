@@ -17,8 +17,16 @@ jobs:
         sudo apt-get update
         sudo apt install maven -y
         mvn -v
+    - name: cache maven
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
     - name: compile
       run: mvn compile
+  
   install:
     runs-on: ubuntu-latest
     steps:
@@ -35,6 +43,13 @@ jobs:
         sudo apt-get update
         sudo apt install maven -y
         mvn -v
+    - name: cache maven
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
     - name: install
       run: mvn install
     needs: compile
