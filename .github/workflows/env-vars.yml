@@ -1,0 +1,19 @@
+name: Env Vars
+on:
+  - push
+  - workflow_dispatch 
+
+env:
+  GLOBAL_VAR: "Bon Jovi"
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    env:
+      JOB_VAR: "CABJ"
+    steps:
+      - name: Print Global var
+        run: echo ${{env.GLOBAL_VAR}}
+      - name: Print Job var
+        run: echo ${{env.JOB_VAR}}
+    
