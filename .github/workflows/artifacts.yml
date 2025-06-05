@@ -10,7 +10,7 @@ jobs:
         run: echo "Sample Artifact!! Bon Jovi 4 Ever" > file.txt
       - name: "Generate Output"
         id: gen-output  
-        run: var="Bon Jovi" >> "$GITHUB_OUTPUT" 
+        run: echo "var=Bon Jovi" >> "$GITHUB_OUTPUT" 
       - name: "Upload Artifact"
         uses: actions/upload-artifact@v4
         with:
