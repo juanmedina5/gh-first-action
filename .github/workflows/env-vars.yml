@@ -27,4 +27,11 @@ jobs:
       - name: print secret
         run: echo ${{secrets.SECRET_VAR}}
 
+  Testing-environments:
+    environment: DEV
+    runs-on: ubuntu-latest
+    steps:
+      - name: print secret
+        run: echo ${{secrets.DEV_ENV_VAR}}
+
     
