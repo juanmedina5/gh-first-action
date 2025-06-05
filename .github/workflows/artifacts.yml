@@ -1,5 +1,5 @@
 name: Artifacts WF
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
   Generate-Artifact:
     runs-on: ubuntu-latest
