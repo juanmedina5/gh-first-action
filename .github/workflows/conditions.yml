@@ -5,11 +5,13 @@ jobs:
   cond-job:
     runs-on: ubuntu-18.04
     steps:
+      - name: init
+        run: echo "Iniciando el job!"
       - name: step 1
         run: echo "step 1"
         id: step1
       - name: step2
         run: echo "se ejecuta solo si falla el step 1"
-        if: steps.step1.outcome == 'failure'       
+        if: failure() && steps.step1.outcome == 'failure'       
       - name: step3
         run: echo "Step 3"       
