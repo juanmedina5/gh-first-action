@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 jobs:
 
   cond-job:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: init
         run: echo "Iniciando el job!"
