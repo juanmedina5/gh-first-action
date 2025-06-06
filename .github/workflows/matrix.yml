@@ -1,0 +1,21 @@
+name: Matrix
+on:
+  - workflow_dispatch
+  - push
+  - pull_request
+
+jobs:
+  
+  node-build:
+    strategy:
+      matrix:
+        node-version: [14, 16]
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{matrix.os}}
+    steps:
+      - name: Install Node JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{matrix.node-version}}
+           
+  
