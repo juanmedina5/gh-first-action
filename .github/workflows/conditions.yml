@@ -12,4 +12,6 @@ jobs:
         run: echo "se ejecuta solo si falla el step 1"
         if: failure() && steps.step1.outcome == 'failure'       
       - name: step3
-        run: echo "Step 3"       
+        run: echo "Step 3"
+        if: steps.step1.outcome == 'success'  
+
