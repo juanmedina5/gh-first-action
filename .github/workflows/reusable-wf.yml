@@ -18,12 +18,12 @@ on:
 jobs:
   Greet:
     outputs:
-      result-output: ${{steps.step-result.outputs.step-result}}
+      result-output: ${{steps.step-result.outputs.result}}
     runs-on: ubuntu-latest
     steps:
       - name: say hi
         run: echo "Hello World From another WF!! ${{inputs.name}} "
       - name: Show Result
         id: step-result
-        run: echo "step-result=success" >> $GITHUB_OUTPUT
+        run: echo "result=success" >> "$GITHUB_OUTPUT"
 
