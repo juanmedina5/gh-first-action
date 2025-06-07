@@ -1,0 +1,9 @@
+name: Implement Reusable WF
+on: [push, workflow_dispatch]
+
+jobs:
+  Greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hi
+        uses: .github/workflows/reusable-wf.yml

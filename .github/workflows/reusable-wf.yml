@@ -1,0 +1,9 @@
+name: Reusable WF
+on: workflow_call
+jobs:
+  dummy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hi
+        run: echo "Hello World From another WF!!"
+
