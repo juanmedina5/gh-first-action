@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say Hi
-        uses: .github/workflows/reusable-wf.yml
+        uses: ./.github/workflows/reusable-wf.yml
