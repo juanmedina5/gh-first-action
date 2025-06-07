@@ -3,6 +3,4 @@ on: [push, workflow_dispatch]
 
 jobs:
   Greet:
-    steps:
-      - name: Say Hi
-        uses: ./.github/workflows/reusable-wf.yml
+    uses: ./.github/workflows/reusable-wf.yml
