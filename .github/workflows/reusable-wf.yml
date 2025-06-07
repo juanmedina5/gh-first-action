@@ -10,10 +10,20 @@ on:
     secrets:
       secret-jm:
         required: true
+    outputs:
+      final-result:
+        description: "Final result of the Reusable WF"
+        value: ${{jobs.Greet.outputs.result-output}}
+        
 jobs:
   Greet:
+    outputs:
+      result-output: ${{steps.step-result.outputs.step-result}}
     runs-on: ubuntu-latest
     steps:
       - name: say hi
         run: echo "Hello World From another WF!! ${{inputs.name}} "
+      - name: Show Result
+        id: step-result
+        run: echo "step-result=success" >> $GITHUB_OUTPUT
 
