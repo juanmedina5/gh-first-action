@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: node:18
+      env:
+        ALBUM: New Jersey
     steps:
       - name: Say Hi
-        run: echo "Bon Jovi 4 Ever!"
+        run: |
+          echo "Bon Jovi 4 Ever!"
+          echo $ALBUM
+
