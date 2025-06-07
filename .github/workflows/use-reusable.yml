@@ -8,3 +8,9 @@ jobs:
       name: Juan Manuel
     # secrets:
     #   secret-jm: ${{secrets.secret-jm}}
+  Print-Reusable-Output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print result
+        run: echo "the result was ${{needs.Greet.outputs.result-output}}"
+    needs: Greet

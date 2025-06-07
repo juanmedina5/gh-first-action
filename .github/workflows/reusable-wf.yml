@@ -9,7 +9,7 @@ on:
         default: Bon Jovi
     secrets:
       secret-jm:
-        required: true
+        required: false
     outputs:
       final-result:
         description: "Final result of the Reusable WF"
