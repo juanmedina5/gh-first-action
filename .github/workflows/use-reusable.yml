@@ -4,3 +4,5 @@ on: [push, workflow_dispatch]
 jobs:
   Greet:
     uses: ./.github/workflows/reusable-wf.yml
+    with:
+      name: Juan Manuel

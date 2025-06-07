@@ -1,9 +1,16 @@
 name: Reusable WF
-on: workflow_call
+on: 
+  workflow_call:
+    inputs:
+      name:
+        type: string
+        description: "Is the name to say hi"
+        required: true
+        default: Bon Jovi
 jobs:
   Greet:
     runs-on: ubuntu-latest
     steps:
       - name: say hi
-        run: echo "Hello World From another WF!!"
+        run: echo "Hello World From another WF!! ${{inputs.name}} "
 
