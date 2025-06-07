@@ -1,7 +1,7 @@
 name: Reusable WF
 on: workflow_call
 jobs:
-  dummy-job:
+  Greet:
     runs-on: ubuntu-latest
     steps:
       - name: say hi

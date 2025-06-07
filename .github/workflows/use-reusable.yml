@@ -3,9 +3,6 @@ on: [push, workflow_dispatch]
 
 jobs:
   Greet:
-    runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
       - name: Say Hi
         uses: ./.github/workflows/reusable-wf.yml
