@@ -3,6 +3,7 @@ on: [push]
 jobs:
   compile:
     runs-on: ubuntu-latest
+    id: compile-id
     steps:
     - name: checkout
       uses: actions/checkout@v4
@@ -14,6 +15,8 @@ jobs:
         saludo: "Bon Jovi 4 Ever"
     - name: compile
       run: mvn compile
+    - name: saludo?
+      run: "el saludo fue: ${{steps.compile-id.outputs.saludo-usado}}"
   
   install:
     runs-on: ubuntu-latest
@@ -27,12 +30,3 @@ jobs:
     - name: install
       run: mvn install
     needs: compile
-
-  saludo-usado:
-    runs-on: ubuntu-latest
-    steps:
-      - name: saludo usado
-        run: |
-          echo "el saludo fue ${{needs.compile.outputs.sal}}" 
-    needs: compile
-  
