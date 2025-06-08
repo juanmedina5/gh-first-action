@@ -5,6 +5,6 @@ const exec=require('@actions/exec');
 function run(){
     core.notice('Ejecutando Desde JS Actions!');
     const name = core.getInput('name',{required: true});
-    core.notice('Enviando un saludo a', $name);
+    core.notice('Enviando un saludo a: ' + $name);
 }
 run();
