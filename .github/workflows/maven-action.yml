@@ -3,20 +3,20 @@ on: [push]
 jobs:
   compile:
     runs-on: ubuntu-latest
-    id: compile-id
     steps:
-    - name: checkout
-      uses: actions/checkout@v4
-    - name: maven-setup
-      uses: ./.github/actions/maven-setup
-      env:
-        JAVA_VERSION: 21
-      with:
-        saludo: "Bon Jovi 4 Ever"
-    - name: compile
-      run: mvn compile
-    - name: saludo?
-      run: "el saludo fue: ${{steps.compile-id.outputs.saludo-usado}}"
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: maven-setup
+        id: compile-id
+        uses: ./.github/actions/maven-setup
+        env:
+          JAVA_VERSION: 21
+        with:
+          saludo: "Bon Jovi 4 Ever"
+      - name: compile
+        run: mvn compile
+      - name: saludo?
+        run: "el saludo fue: ${{steps.compile-id.outputs.saludo-usado}}"
   
   install:
     runs-on: ubuntu-latest
