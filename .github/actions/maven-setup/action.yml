@@ -1,4 +1,4 @@
-name: Cache Maven Dependencies
+name: Maven Set up
 description: "Storage Maven Dependencies"
 inputs:
   saludo:

@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: step 1
         id: step1
-        run: echo "step 1" && exit 1
+        run: echo "step 1" && exit 0
       - name: step2
         run: echo "se ejecuta solo si falla el step 1"
         if: failure() && steps.step1.outcome == 'failure'       
