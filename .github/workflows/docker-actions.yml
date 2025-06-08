@@ -1,0 +1,14 @@
+name: Docker Actions
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  
+  docker-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Saludo
+        uses: ./.github/actions/docker-actions
+        with:
+          name: Juan Manuel
