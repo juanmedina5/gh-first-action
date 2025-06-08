@@ -12,5 +12,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Saludo
         uses: ./.github/actions/docker-actions
-        with:
-          name: Juan Manuel
+        # with:
+        #   name: Juan Manuel
