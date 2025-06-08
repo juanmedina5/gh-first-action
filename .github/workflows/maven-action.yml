@@ -18,7 +18,7 @@ jobs:
         sudo apt install maven -y
         mvn -v
     - name: cache maven
-      uses: ./.github/actions/cached-deps/action.yml
+      uses: ./.github/actions/cached-deps
     - name: compile
       run: mvn compile
   
@@ -39,7 +39,7 @@ jobs:
         sudo apt install maven -y
         mvn -v
     - name: cache maven
-      uses: ./.github/actions/cached-deps/action.yml
+      uses: ./.github/actions/cached-deps
     - name: install
       run: mvn install
     needs: compile
