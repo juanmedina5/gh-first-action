@@ -1,3 +1,5 @@
+import os
+
 def run():
     name = os.environ['INPUT_NAME']
 
