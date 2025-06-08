@@ -5,9 +5,10 @@ inputs:
     description: Saludo final
     required: true
     default: Saludando desde un composite action
-outouts:
+outputs:
   saludo-usado:
     description: Que saludo se usó al final?
+    value: ${{steps.saludo_usado.sal}}
     
 runs:
   using: composite
@@ -32,6 +33,7 @@ runs:
         restore-keys: |
           ${{ runner.os }}-maven-
     - name: Saludo con Maven
+      id: saludo_usado
       run: |
         echo ${{inputs.saludo}}
         echo "sal=${{inputs.saludo}}" >> $GITHUB_OUTPUT
