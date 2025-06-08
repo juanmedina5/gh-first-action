@@ -16,7 +16,7 @@ jobs:
       - name: compile
         run: mvn compile
       - name: saludo?
-        run: "el saludo fue: ${{steps.compile-id.outputs.saludo-usado}}"
+        run: echo "el saludo fue ${{steps.compile-id.outputs.saludo-usado}}"
   
   install:
     runs-on: ubuntu-latest
