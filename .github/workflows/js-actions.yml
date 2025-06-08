@@ -1,11 +1,8 @@
 name: JS Actions
-
 on:
   - push
   - workflow_dispatch
-
 jobs:
-  
   JS-Init-Job:
     runs-on: ubuntu-latest
     steps:

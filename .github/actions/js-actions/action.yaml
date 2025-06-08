@@ -1,6 +1,9 @@
 name: JS action
 description: "JS action"
-
+inputs:
+  name:
+    description: "nombre de la persona a saludar"
+    default: Paca
 runs:
   using: node20
   # pre: file.js
