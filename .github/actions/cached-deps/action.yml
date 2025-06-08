@@ -1,0 +1,15 @@
+name: Cache Maven Dependencies
+description: "Storage Maven Dependencies"
+runs:
+  using: composite
+  steps:
+    - name: cache maven
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+    - name: Saludo con Maven
+      run: echo "Saludando desde un composite action"
+      shell: bash
