@@ -27,4 +27,12 @@ jobs:
     - name: install
       run: mvn install
     needs: compile
+
+  saludo-usado:
+    runs-on: ubuntu-latest
+    steps:
+      - name: saludo usado
+        run: |
+          echo "el saludo fue ${{needs.compile.outputs.sal}}" 
+    needs: compile
   
