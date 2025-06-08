@@ -3,6 +3,17 @@ description: "Storage Maven Dependencies"
 runs:
   using: composite
   steps:
+    - name: install jdk
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+    - name: Set up Maven
+      run: |
+        java -version
+        sudo apt-get update
+        sudo apt install maven -y
+        mvn -v
     - name: cache maven
       uses: actions/cache@v4
       with:

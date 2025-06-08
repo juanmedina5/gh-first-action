@@ -6,19 +6,8 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v4
-    - name: install jdk
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'temurin'
-        java-version: '21'
-    - name: Set up Maven
-      run: |
-        java -version
-        sudo apt-get update
-        sudo apt install maven -y
-        mvn -v
-    - name: cache maven
-      uses: ./.github/actions/cached-deps
+    - name: maven-setup
+      uses: ./.github/actions/maven-setup
     - name: compile
       run: mvn compile
   
@@ -27,19 +16,8 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v4
-    - name: install jdk
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'temurin'
-        java-version: '21'
-    - name: Set up Maven
-      run: |
-        java -version
-        sudo apt-get update
-        sudo apt install maven -y
-        mvn -v
-    - name: cache maven
-      uses: ./.github/actions/cached-deps
+    - name: maven-setup
+      uses: ./.github/actions/maven-setup
     - name: install
       run: mvn install
     needs: compile
