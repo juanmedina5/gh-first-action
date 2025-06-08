@@ -8,6 +8,8 @@ jobs:
   docker-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
       - name: Saludo
         uses: ./.github/actions/docker-actions
         with:
