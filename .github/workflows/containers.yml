@@ -8,6 +8,9 @@ jobs:
   
   container-job:
     runs-on: ubuntu-latest
+    services:
+      docker-dind:
+        image: docker:28-dind
     container:
       image: node:18
       env:
