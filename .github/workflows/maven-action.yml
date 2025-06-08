@@ -8,6 +8,8 @@ jobs:
       uses: actions/checkout@v4
     - name: maven-setup
       uses: ./.github/actions/maven-setup
+      with:
+        JAVA_VERSION: 21
     - name: compile
       run: mvn compile
   
