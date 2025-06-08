@@ -1,11 +1,10 @@
 name: Docker actions
 description: Run Docker Actions
+inputs:
+  name:
+    description: "nombre de la persona a saludar"
+    default: Paca
 runs:
   using: docker
   image: Dockerfile # Path hacia el dockerfile a utilizar
   # image: node:20 # Tambien se puden referenciar imagenes de un registry
-  inputs:
-  name:
-    description: "nombre de la persona a saludar"
-    default: Paca
-
