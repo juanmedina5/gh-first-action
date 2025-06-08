@@ -1,5 +1,10 @@
 name: Cache Maven Dependencies
 description: "Storage Maven Dependencies"
+inputs:
+  saludo:
+    description: Saludo final
+    required: true
+    default: Saludando desde un composite action
 runs:
   using: composite
   steps:
@@ -23,5 +28,5 @@ runs:
         restore-keys: |
           ${{ runner.os }}-maven-
     - name: Saludo con Maven
-      run: echo "Saludando desde un composite action"
+      run: echo ${{inputs.saludo}}
       shell: bash
