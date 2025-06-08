@@ -3,4 +3,6 @@ description: "JS action"
 
 runs:
   using: node20
+  # pre: file.js
   main: main.js
+  # post: file.js
